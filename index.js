@@ -18,7 +18,7 @@ numbers.forEach(number => {
 //         return number * 2
 //     }
 // )// [2,3,6,8]
-const doubleNumbers = numbers.map((n, i) => i * n)// [2,3,6,8]
+const doubleNumbers = numbers.map(n => 2 * n)// [2,3,6,8]
 
 console.log(doubleNumbers)
 
@@ -65,6 +65,10 @@ const _numbers = [1000, 1111, 1113, 11110]
 // )
 
 const numberHigherThan10 = _numbers.filter(n => n > 10)
+
+const strings = ["aldjla", "aposdfuaiosduf", " saodfuihasodufasiodu"]
+
+// console.log(strings.filter(s => s.length > 10))
 
 console.log({ numberHigherThan10 })
 
@@ -114,10 +118,19 @@ console.log(myFruits.reverse())
 
 // .reduce
 
+const __numbers = [1, 4, 5, 20, 50, 62, 2345, 1, 5]
 
 
+// const sum = __numbers.reduce(
+//     function (accumulator, current) {
+//         console.log({ accumulator, current });
+//         return accumulator + current
+//     }, 0
+// )
 
+const sum = __numbers.reduce((a, c) => a + c, 0)
 
+// console.log({ sum })
 
 /* EXERCISE 2
 Write the code to get the maximum value in an array.
@@ -126,14 +139,32 @@ Write the code to get the maximum value in an array.
 /* WRITE YOUR CODE HERE */
 
 function ex2(array) {
+
+    // const max = array.reduce((accumulator, current) => {
+    //     console.log({ accumulator })
+    //     if (accumulator > current) {
+    //         return accumulator
+    //     } else {
+    //         return current
+    //     }
+    // })
+    // console.log({ max })
+
     return array.reduce((a, c) => a > c ? a : c)
 }
+
+ex2(__numbers)
 
 /* EXERCISE 3
 Write the code to get the minimum value in an array.
 */
 
 function ex3(array) {
-    return array.reduce((a, c) => a < c ? a : c)
+    return array.reduce((a, c) => {
+        console.log({ a, c })
+        return a < c ? a : c
+    })
 }
+
+ex3(__numbers.reverse())
 
